@@ -1,0 +1,25 @@
+{"name":"bubble", "children": [
+{"name":"Start","description":"Atlas of Global Agriculture",
+"children":[
+    {"name": "have"},
+    {"name": "do"},
+    {"name": "think"},
+    {"name": "make"},
+    {"name": "want"},
+    {"name": "need"},
+    {"name": "see"},
+    {"name": "know"},
+    {"name": "get"},
+    {"name": "go"},
+    {"name": "hope"},
+    {"name": "change"},
+    {"name": "believe"}
+    
+]},
+{"name": "End", "description": "Virtual Lab of Global Agriculture",
+"children":[
+    {"name":"Excess Nutrient","address":"http://d3js.org","note":"Prototype Infographics on Excess Fertilizer Nutrients"},
+    {"name":"Yield Gap","address":"http://d3js.org", "note":"The gap between attainable yields and actual yields, with modeled yields assuming the percentage of gap closed."},
+    {"name":"Fertilizer","address":"http://sunsp.net"}
+]}
+]}
