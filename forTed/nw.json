@@ -49,19 +49,35 @@
     "direction":"upward",
     "name":"origin",
     "children":[
-      {
+    {
+        "name":"want",
+        "children":[]
+          },
+          {
+        "name":"think",
+        "children":[]
+          },
+          {
+        "name":"know",
+        "children":[]
+          },
+      	{
         "name":"talk",
         "children":[]
-          },{
+          },
+          {
         "name":"had",
         "children":[]
-          },{
+          },
+          {
         "name":"tell",
         "children":[]
-          },{
+          },
+          {
         "name":"get",
         "children":[]
-          },{
+          },
+          {
         "name":"start",
         "children":[]
           }

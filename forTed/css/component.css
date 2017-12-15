@@ -8,7 +8,7 @@
 
 .grid li {
 	display: inline-block;
-	width: 440px;
+	width: 420px;
 	margin: 0;
 	padding: 20px;
 	text-align: left;
@@ -30,6 +30,7 @@
 	position: absolute;
 	top: 0;
 	left: 0;
+	padding-left: 10px;
 	padding: 20px;
 	background: #2c3f52;
 	color: #f36f36;
