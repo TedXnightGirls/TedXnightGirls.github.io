@@ -12,6 +12,12 @@
 	<link href="css/style.css" rel="stylesheet">
 	<!-- skin color -->
 	<link href="color/default.css" rel="stylesheet">
+
+<!-- load D3js -->
+<script src="//d3plus.org/js/d3.js"></script>
+
+<!-- load D3plus after D3js -->
+<script src="//d3plus.org/js/d3plus.js"></script>
 	<!--[if lt IE 7]>
     <link href="css/font-awesome-ie7.css" type="text/css" rel="stylesheet">
   <![endif]-->
@@ -23,6 +29,27 @@
 
 	<!-- Favicon -->
 	<link rel="shortcut icon" href="img/favicon.ico">
+	<!-- Custom fonts for this template -->
+    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+
+ <!-- Custom styles for this template -->
+    <link href="css/creative.min.css" rel="stylesheet">
+   <link rel ="stylesheet" href ="http://fonts.googleapis.com/earlyaccess/jejugothic.css">
+   
+   <link rel ="stylesheet" type = "text/css" href ="http://fonts.googleapis.com/earlyaccess/cwtehei.css">
+    <style>
+    body{
+    font-family:'Jeju Gothic',serif;
+    }
+    h1,h2,h3,h4,h5,h6{
+    
+    font-family:'cwTeXHei','Jeju Gothic',Arial, sans-serif;
+    font-weight:100;
+    }
+    </style>
+	
 </head>
 
 <body>
@@ -41,7 +68,7 @@
 							<li><a title="team" href="main.html#about">About</a></li>
 							<li><a title="keys" href="main.html#keys">Key Questions</a></li>
 							<li><a title="numbers" href="main.html#numbers">Ted by Numbers</a></li>
-							<li><a title="works" href="main.html#works">Keywords</a></li>
+							<li><a title="works" href="main.html#works">Spin off</a></li>
 							<li><a title="contact" href="main.html#contact">Contact</a></li>
 						</ul>
 					</nav>
@@ -84,9 +111,12 @@
 			
 		<div class="container">
 <div class="row">
-<p>시작과 끝문장</p>
-<p>d3로 보여주기</p>
-<iframe width="600" height="700" frameborder="0" scrolling="no" src="sfwords.html"></iframe></div>
+<h2 style="padding-left:40px"><i class=icon-check></i> 시작과 마지막 문장에서 자주 사용된 동사</h2>
+
+<div id="viz"></div>
+
+
+<iframe width="900" height="700" frameborder="0" scrolling="no" src=""></iframe></div>
 </div>
 			
 			
@@ -137,6 +167,181 @@
 	<script src="js/jquery.tweet.js"></script>
 	<!-- custom functions -->
 	<script src="js/custom.js"></script>
+
+<script>
+  // sample data array
+  var sample_data = [
+	  {
+			"group" : "START",
+			"name" : "have",
+			"value" : 511
+		}, {
+			"group" : "START",
+			"name" : "been",
+			"value" : 251
+		}, {
+			"group" : "START",
+			"name" : "want",
+			"value" : 224
+		}, {
+			"group" : "START",
+			"name" : "talk",
+			"value" : 224
+		}, {
+			"group" : "START",
+			"name" : "think",
+			"value" : 223
+		}, {
+			"group" : "START",
+			"name" : "know",
+			"value" : 215
+		}, {
+			"group" : "START",
+			"name" : "had",
+			"value" : 192
+		}, {
+			"group" : "START",
+			"name" : "tell",
+			"value" : 124
+		}, {
+			"group" : "START",
+			"name" : "make",
+			"value" : 123
+		}, {
+			"group" : "START",
+			"name" : "say",
+			"value" : 121
+		}, {
+			"group" : "START",
+			"name" : "see",
+			"value" : 116
+		}, {
+			"group" : "START",
+			"name" : "go",
+			"value" : 111
+		}, {
+			"group" : "START",
+			"name" : "get",
+			"value" : 110
+		}, {
+			"group" : "START",
+			"name" : "try",
+			"value" : 98
+		}, {
+			"group" : "START",
+			"name" : "start",
+			"value" : 97
+		}, {
+			"group" : "START",
+			"name" : "come",
+			"value" : 86
+		}, {
+			"group" : "START",
+			"name" : "take",
+			"value" : 84
+		}, {
+			"group" : "START",
+			"name" : "look",
+			"value" : 67
+		}, {
+			"group" : "START",
+			"name" : "ask",
+			"value" : 48
+		}, {
+			"group" : "START",
+			"name" : "show",
+			"value" : 48
+		},  {
+			"group" : "END", //final
+			"name" : "do",
+			"value" : 400
+		}, {
+			"group" : "END",
+			"name" : "think",
+			"value" : 355
+		}, {
+			"group" : "END",
+			"name" : "make",
+			"value" : 241
+		}, {
+			"group" : "END",
+			"name" : "want",
+			"value" : 202
+		}, {
+			"group" : "END",
+			"name" : "need",
+			"value" : 184
+		}, {
+			"group" : "END",
+			"name" : "see",
+			"value" : 183
+		}, {
+			"group" : "END",
+			"name" : "know",
+			"value" : 182
+		},///
+		{
+			"group" : "END",
+			"name" : "get",
+			"value" : 174
+		}, {
+			"group" : "END",
+			"name" : "go",
+			"value" : 126
+		}, {
+			"group" : "END",
+			"name" : "hope",
+			"value" : 120
+		}, {
+			"group" : "END",
+			"name" : "take",
+			"value" : 114
+		}, {
+			"group" : "END",
+			"name" : "change",
+			"value" : 108
+		}, {
+			"group" : "END",
+			"name" : "believe",
+			"value" : 102
+		}, {
+			"group" : "END",
+			"name" : "say",
+			"value" : 101
+		}, {
+			"group" : "END",
+			"name" : "help",
+			"value" : 100
+		}, {
+			"group" : "END",
+			"name" : "find",
+			"value" : 84
+		},  {
+			"group" : "END",
+			"name" : "live",
+			"value" : 84
+		}, {
+			"group" : "END",
+			"name" : "create",
+			"value" : 70
+		}, {
+			"group" : "END",
+			"name" : "let",
+			"value" : 66
+		} ]
+  // instantiate d3plus
+  var visualization = d3plus.viz()
+    .container("#viz")     // container DIV to hold the visualization
+    .data(sample_data)     // data to use with the visualization
+    .type("bubbles")       // visualization type
+    .id(["group", "name"]) // nesting keys
+    .depth(1)              // 0-based depth
+    .size("value")         // key name to size bubbles
+ 	.style(('width'),1200)
+    .color("group")        // color by each group
+    .draw()                // finally, draw the visualization!
+</script>
+
 </body>
 
 </html>

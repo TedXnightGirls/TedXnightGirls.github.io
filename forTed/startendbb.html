@@ -1,0 +1,185 @@
+<!doctype html>
+<meta charset="utf-8">
+
+<!-- load D3js -->
+<script src="//d3plus.org/js/d3.js"></script>
+
+<!-- load D3plus after D3js -->
+<script src="//d3plus.org/js/d3plus.js"></script>
+
+<!-- create container element for visualization -->
+<div id="viz"></div>
+
+<script>
+  // sample data array
+  var sample_data = [
+	  {
+			"group" : "START",
+			"name" : "have",
+			"value" : 511
+		}, {
+			"group" : "START",
+			"name" : "been",
+			"value" : 251
+		}, {
+			"group" : "START",
+			"name" : "want",
+			"value" : 224
+		}, {
+			"group" : "START",
+			"name" : "talk",
+			"value" : 224
+		}, {
+			"group" : "START",
+			"name" : "think",
+			"value" : 223
+		}, {
+			"group" : "START",
+			"name" : "know",
+			"value" : 215
+		}, {
+			"group" : "START",
+			"name" : "had",
+			"value" : 192
+		}, {
+			"group" : "START",
+			"name" : "tell",
+			"value" : 124
+		}, {
+			"group" : "START",
+			"name" : "make",
+			"value" : 123
+		}, {
+			"group" : "START",
+			"name" : "say",
+			"value" : 121
+		}, {
+			"group" : "START",
+			"name" : "see",
+			"value" : 116
+		}, {
+			"group" : "START",
+			"name" : "go",
+			"value" : 111
+		}, {
+			"group" : "START",
+			"name" : "get",
+			"value" : 110
+		}, {
+			"group" : "START",
+			"name" : "try",
+			"value" : 98
+		}, {
+			"group" : "START",
+			"name" : "start",
+			"value" : 97
+		}, {
+			"group" : "START",
+			"name" : "come",
+			"value" : 86
+		}, {
+			"group" : "START",
+			"name" : "take",
+			"value" : 84
+		}, {
+			"group" : "START",
+			"name" : "look",
+			"value" : 67
+		}, {
+			"group" : "START",
+			"name" : "ask",
+			"value" : 48
+		}, {
+			"group" : "START",
+			"name" : "show",
+			"value" : 48
+		},  {
+			"group" : "END", //final
+			"name" : "do",
+			"value" : 400
+		}, {
+			"group" : "END",
+			"name" : "think",
+			"value" : 355
+		}, {
+			"group" : "END",
+			"name" : "make",
+			"value" : 241
+		}, {
+			"group" : "END",
+			"name" : "want",
+			"value" : 202
+		}, {
+			"group" : "END",
+			"name" : "need",
+			"value" : 184
+		}, {
+			"group" : "END",
+			"name" : "see",
+			"value" : 183
+		}, {
+			"group" : "END",
+			"name" : "know",
+			"value" : 182
+		},///
+		{
+			"group" : "END",
+			"name" : "get",
+			"value" : 174
+		}, {
+			"group" : "END",
+			"name" : "go",
+			"value" : 126
+		}, {
+			"group" : "END",
+			"name" : "hope",
+			"value" : 120
+		}, {
+			"group" : "END",
+			"name" : "take",
+			"value" : 114
+		}, {
+			"group" : "END",
+			"name" : "change",
+			"value" : 108
+		}, {
+			"group" : "END",
+			"name" : "believe",
+			"value" : 102
+		}, {
+			"group" : "END",
+			"name" : "say",
+			"value" : 101
+		}, {
+			"group" : "END",
+			"name" : "help",
+			"value" : 100
+		}, {
+			"group" : "END",
+			"name" : "find",
+			"value" : 84
+		},  {
+			"group" : "END",
+			"name" : "live",
+			"value" : 84
+		}, {
+			"group" : "END",
+			"name" : "create",
+			"value" : 70
+		}, {
+			"group" : "END",
+			"name" : "let",
+			"value" : 66
+		} ]
+  // instantiate d3plus
+  var visualization = d3plus.viz()
+    .container("#viz")     // container DIV to hold the visualization
+    .data(sample_data)     // data to use with the visualization
+    .type("bubbles")       // visualization type
+    .id(["group", "name"]) // nesting keys
+    .depth(1)              // 0-based depth
+    .size("value")         // key name to size bubbles
+ 	.style(('width'),1200)
+    .color("group")        // color by each group
+    .draw()                // finally, draw the visualization!
+</script>
